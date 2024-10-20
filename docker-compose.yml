@@ -1,0 +1,35 @@
+services:
+  ubuntu:
+    build:
+      context: ./otserver
+    stdin_open: true
+    tty: true
+    ports:
+      - "7171:7171"
+      - "7172:7172"
+    volumes:
+      - ./otserver/datapack:/srv
+      - ./otserver/source:/srv/source
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: otserv
+      MYSQL_PASSWORD: 1234
+    volumes:
+      - ./otserver/schema:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+
+  dbAdminPainel:
+    image: phpmyadmin/phpmyadmin:5.1.1
+    restart: always
+    ports:
+      - 1010:80
+    links:
+      - db
+    environment:
+      PMA_ARBITRARY: 1
