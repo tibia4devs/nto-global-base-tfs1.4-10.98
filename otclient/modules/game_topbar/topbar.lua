@@ -104,25 +104,25 @@ local states = nil
 local experienceTooltip = 'You have %d%% to advance to level %d.'
 local settings = {}
 
-function init()
+-- function init()
     
-    connect(LocalPlayer, {
-        onHealthChange = onHealthChange,
-        onManaChange = onManaChange,
-        onLevelChange = onLevelChange,
-        onStatesChange = onStatesChange,
-        onMagicLevelChange = onMagicLevelChange,
-        onBaseMagicLevelChange = onBaseMagicLevelChange,
-        onSkillChange = onSkillChange,
-        onBaseSkillChange = onBaseSkillChange
-    })
-    connect(g_game, {onGameStart = refresh, onGameEnd = offline})
+--     connect(LocalPlayer, {
+--         onHealthChange = onHealthChange,
+--         onManaChange = onManaChange,
+--         onLevelChange = onLevelChange,
+--         onStatesChange = onStatesChange,
+--         onMagicLevelChange = onMagicLevelChange,
+--         onBaseMagicLevelChange = onBaseMagicLevelChange,
+--         onSkillChange = onSkillChange,
+--         onBaseSkillChange = onBaseSkillChange
+--     })
+--     connect(g_game, {onGameStart = refresh, onGameEnd = offline})
 
-    -- load condition icons
-    for k, v in pairs(Icons) do g_textures.preload(v.path) end
+--     -- load condition icons
+--     for k, v in pairs(Icons) do g_textures.preload(v.path) end
 
-    if g_game.isOnline() then refresh() end
-end
+--     if g_game.isOnline() then refresh() end
+-- end
 
 function terminate()
 

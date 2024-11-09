@@ -35,70 +35,70 @@ manaCircle = nil
 topHealthBar = nil
 topManaBar = nil
 
-function init()
-  connect(LocalPlayer, { onHealthChange = onHealthChange,
-                         onManaChange = onManaChange,
-                         onLevelChange = onLevelChange,
-                         onStatesChange = onStatesChange,
-                         onSoulChange = onSoulChange,
-                         onFreeCapacityChange = onFreeCapacityChange })
+-- function init()
+--   connect(LocalPlayer, { onHealthChange = onHealthChange,
+--                          onManaChange = onManaChange,
+--                          onLevelChange = onLevelChange,
+--                          onStatesChange = onStatesChange,
+--                          onSoulChange = onSoulChange,
+--                          onFreeCapacityChange = onFreeCapacityChange })
 
-  connect(g_game, { onGameEnd = offline })
+--   connect(g_game, { onGameEnd = offline })
 
-  healthInfoWindow = g_ui.loadUI('healthinfo', modules.game_interface.getRightPanel())
-  healthInfoWindow:disableResize()
+--   healthInfoWindow = g_ui.loadUI('healthinfo', modules.game_interface.getRightPanel())
+--   healthInfoWindow:disableResize()
   
-  if not healthInfoWindow.forceOpen then
-    healthInfoButton = modules.client_topmenu.addRightGameToggleButton('healthInfoButton', tr('Health Information'), '/images/topbuttons/healthinfo', toggle)
-    if g_app.isMobile() then
-      healthInfoButton:hide()
-    else
-      healthInfoButton:setOn(true)
-    end
-  end
+--   if not healthInfoWindow.forceOpen then
+--     healthInfoButton = modules.client_topmenu.addRightGameToggleButton('healthInfoButton', tr('Health Information'), '/images/topbuttons/healthinfo', toggle)
+--     if g_app.isMobile() then
+--       healthInfoButton:hide()
+--     else
+--       healthInfoButton:setOn(true)
+--     end
+--   end
 
-  healthBar = healthInfoWindow:recursiveGetChildById('healthBar')
-  manaBar = healthInfoWindow:recursiveGetChildById('manaBar')
-  experienceBar = healthInfoWindow:recursiveGetChildById('experienceBar')
-  soulLabel = healthInfoWindow:recursiveGetChildById('soulLabel')
-  capLabel = healthInfoWindow:recursiveGetChildById('capLabel')
+--   healthBar = healthInfoWindow:recursiveGetChildById('healthBar')
+--   manaBar = healthInfoWindow:recursiveGetChildById('manaBar')
+--   experienceBar = healthInfoWindow:recursiveGetChildById('experienceBar')
+--   soulLabel = healthInfoWindow:recursiveGetChildById('soulLabel')
+--   capLabel = healthInfoWindow:recursiveGetChildById('capLabel')
 
-  overlay = g_ui.createWidget('HealthOverlay', modules.game_interface.getMapPanel())  
-  healthCircleFront = overlay:getChildById('healthCircleFront')
-  manaCircleFront = overlay:getChildById('manaCircleFront')
-  healthCircle = overlay:getChildById('healthCircle')
-  manaCircle = overlay:getChildById('manaCircle')
-  topHealthBar = overlay:getChildById('topHealthBar')
-  topManaBar = overlay:getChildById('topManaBar')
+--   overlay = g_ui.createWidget('HealthOverlay', modules.game_interface.getMapPanel())  
+--   healthCircleFront = overlay:getChildById('healthCircleFront')
+--   manaCircleFront = overlay:getChildById('manaCircleFront')
+--   healthCircle = overlay:getChildById('healthCircle')
+--   manaCircle = overlay:getChildById('manaCircle')
+--   topHealthBar = overlay:getChildById('topHealthBar')
+--   topManaBar = overlay:getChildById('topManaBar')
   
-  connect(overlay, { onGeometryChange = onOverlayGeometryChange })
+--   connect(overlay, { onGeometryChange = onOverlayGeometryChange })
   
-  -- load condition icons
-  for k,v in pairs(Icons) do
-    g_textures.preload(v.path)
-  end
+--   -- load condition icons
+--   for k,v in pairs(Icons) do
+--     g_textures.preload(v.path)
+--   end
 
-  if g_game.isOnline() then
-    local localPlayer = g_game.getLocalPlayer()
-    onHealthChange(localPlayer, localPlayer:getHealth(), localPlayer:getMaxHealth())
-    onManaChange(localPlayer, localPlayer:getMana(), localPlayer:getMaxMana())
-    onLevelChange(localPlayer, localPlayer:getLevel(), localPlayer:getLevelPercent())
-    onStatesChange(localPlayer, localPlayer:getStates(), 0)
-    onSoulChange(localPlayer, localPlayer:getSoul())
-    onFreeCapacityChange(localPlayer, localPlayer:getFreeCapacity())
-  end
+--   if g_game.isOnline() then
+--     local localPlayer = g_game.getLocalPlayer()
+--     onHealthChange(localPlayer, localPlayer:getHealth(), localPlayer:getMaxHealth())
+--     onManaChange(localPlayer, localPlayer:getMana(), localPlayer:getMaxMana())
+--     onLevelChange(localPlayer, localPlayer:getLevel(), localPlayer:getLevelPercent())
+--     onStatesChange(localPlayer, localPlayer:getStates(), 0)
+--     onSoulChange(localPlayer, localPlayer:getSoul())
+--     onFreeCapacityChange(localPlayer, localPlayer:getFreeCapacity())
+--   end
 
 
-  hideLabels()
-  hideExperience()
+--   hideLabels()
+--   hideExperience()
 
-  healthInfoWindow:setup()
+--   healthInfoWindow:setup()
   
-  if g_app.isMobile() then
-    healthInfoWindow:close()
-    healthInfoButton:setOn(false)  
-  end
-end
+--   if g_app.isMobile() then
+--     healthInfoWindow:close()
+--     healthInfoButton:setOn(false)  
+--   end
+-- end
 
 function terminate()
   disconnect(LocalPlayer, { onHealthChange = onHealthChange,
