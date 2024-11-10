@@ -7,26 +7,26 @@ settings = {}
 local callDelay = 1000 -- each call delay is also increased by random values (0-callDelay/2)
 local dispatcher = {}
 
-function init()
-  g_ui.importStyle('questlogwindow')
+-- function init()
+--   g_ui.importStyle('questlogwindow')
 
-  window = g_ui.createWidget('QuestLogWindow', rootWidget)
-  window:hide()
-  trackerWindow = g_ui.createWidget('QuestTracker', modules.game_interface.getRightPanel())
-  trackerWindow:setup()
-  trackerWindow:hide()
+--   window = g_ui.createWidget('QuestLogWindow', rootWidget)
+--   window:hide()
+--   trackerWindow = g_ui.createWidget('QuestTracker', modules.game_interface.getRightPanel())
+--   trackerWindow:setup()
+--   trackerWindow:hide()
   
-  if not g_app.isMobile() then
-    questLogButton = modules.client_topmenu.addLeftGameButton('questLogButton', tr('Quest Log'), '/images/topbuttons/questlog', function() g_game.requestQuestLog() end, false, 8)
-    questTrackerButton = modules.client_topmenu.addLeftGameButton('questTrackerButton', tr('Quest Tracker'), '/images/topbuttons/quest_tracker', toggle, false, 9)
-  end
+--   if not g_app.isMobile() then
+--     questLogButton = modules.client_topmenu.addLeftGameButton('questLogButton', tr('Quest Log'), '/images/topbuttons/questlog', function() g_game.requestQuestLog() end, false, 8)
+--     questTrackerButton = modules.client_topmenu.addLeftGameButton('questTrackerButton', tr('Quest Tracker'), '/images/topbuttons/quest_tracker', toggle, false, 9)
+--   end
   
-  connect(g_game, { onQuestLog = onGameQuestLog,
-                    onQuestLine = onGameQuestLine,
-                    onGameEnd = offline,
-                    onGameStart = online})
-  online()
-end
+--   connect(g_game, { onQuestLog = onGameQuestLog,
+--                     onQuestLine = onGameQuestLine,
+--                     onGameEnd = offline,
+--                     onGameStart = online})
+--   online()
+-- end
 
 function terminate()
   disconnect(g_game, { onQuestLog = onGameQuestLog,

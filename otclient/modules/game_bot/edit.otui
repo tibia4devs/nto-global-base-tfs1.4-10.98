@@ -237,13 +237,6 @@ MainWindow
     width: 80
     @onClick: g_platform.openUrl("http://otclient.ovh/bot.php?forum")
 
-  Button
-    !text: tr('Discord')
-    anchors.bottom: parent.bottom
-    anchors.left: prev.right
-    margin-left: 5 
-    width: 80
-    @onClick: g_platform.openUrl("http://otclient.ovh/bot.php?discord")
   
   Button
     id: cancelButton

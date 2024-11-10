@@ -73,8 +73,8 @@ TopMenuPingLabel < Label
 
 TopMenu < TopMenuPanel
   id: topMenu
-  width: 800
-  anchors.horizontalCenter: parent.horizontalCenter
+  anchors.left: parent.left
+  anchors.right: parent.right
   anchors.top: parent.top
   &hideIngame: false
   &reverseButtons: true

@@ -35,27 +35,27 @@ local function sendAction(action, data)
 end
 
 -- public functions
-function init()
-  connect(g_game, {
-    onGameStart = check, 
-    onGameEnd = hide,
-    onStoreInit = onStoreInit,
-    onStoreCategories = onStoreCategories,
-    onStoreOffers = onStoreOffers,
-    onStoreTransactionHistory = onStoreTransactionHistory,    
-    onStorePurchase = onStorePurchase,
-    onStoreError = onStoreError,
-    onCoinBalance = onCoinBalance    
-  })
+-- function init()
+--   connect(g_game, {
+--     onGameStart = check, 
+--     onGameEnd = hide,
+--     onStoreInit = onStoreInit,
+--     onStoreCategories = onStoreCategories,
+--     onStoreOffers = onStoreOffers,
+--     onStoreTransactionHistory = onStoreTransactionHistory,    
+--     onStorePurchase = onStorePurchase,
+--     onStoreError = onStoreError,
+--     onCoinBalance = onCoinBalance    
+--   })
 
-  ProtocolGame.registerExtendedJSONOpcode(SHOP_EXTENTED_OPCODE, onExtendedJSONOpcode)
+--   ProtocolGame.registerExtendedJSONOpcode(SHOP_EXTENTED_OPCODE, onExtendedJSONOpcode)
   
-  if g_game.isOnline() then
-    check()
-  end
-  createShop()
-  createTransferWindow()
-end
+--   if g_game.isOnline() then
+--     check()
+--   end
+--   createShop()
+--   createTransferWindow()
+-- end
 
 function terminate()
   disconnect(g_game, {

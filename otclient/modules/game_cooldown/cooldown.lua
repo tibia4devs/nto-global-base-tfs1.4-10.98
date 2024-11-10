@@ -13,32 +13,32 @@ cooldown = {}
 cooldowns = {}
 groupCooldown = {}
 
-function init()
-  connect(g_game, { onGameStart = online,
-                    onSpellGroupCooldown = onSpellGroupCooldown,
-                    onSpellCooldown = onSpellCooldown })
+-- function init()
+--   connect(g_game, { onGameStart = online,
+--                     onSpellGroupCooldown = onSpellGroupCooldown,
+--                     onSpellCooldown = onSpellCooldown })
 
-  cooldownButton = modules.client_topmenu.addRightGameToggleButton('cooldownButton', 
-    tr('Cooldowns'), '/images/topbuttons/cooldowns', toggle, false, 5)
-  cooldownButton:setOn(true)
-  cooldownButton:hide()
+--   cooldownButton = modules.client_topmenu.addRightGameToggleButton('cooldownButton', 
+--     tr('Cooldowns'), '/images/topbuttons/cooldowns', toggle, false, 5)
+--   cooldownButton:setOn(true)
+--   cooldownButton:hide()
 
-  cooldownWindow = g_ui.loadUI('cooldown', modules.game_interface.getRightPanel())
-  cooldownWindow:disableResize()
-  cooldownWindow:setup()
+--   cooldownWindow = g_ui.loadUI('cooldown', modules.game_interface.getRightPanel())
+--   cooldownWindow:disableResize()
+--   cooldownWindow:setup()
 
-  contentsPanel = cooldownWindow:getChildById('contentsPanel')
-  cooldownPanel = contentsPanel:getChildById('cooldownPanel')
+--   contentsPanel = cooldownWindow:getChildById('contentsPanel')
+--   cooldownPanel = contentsPanel:getChildById('cooldownPanel')
 
-  -- preload cooldown images
-  for k,v in pairs(SpelllistSettings) do
-    g_textures.preload(v.iconFile)
-  end
+--   -- preload cooldown images
+--   for k,v in pairs(SpelllistSettings) do
+--     g_textures.preload(v.iconFile)
+--   end
 
-  if g_game.isOnline() then
-    online()
-  end
-end
+--   if g_game.isOnline() then
+--     online()
+--   end
+-- end
 
 function terminate()
   disconnect(g_game, { onGameStart = online,

@@ -49,7 +49,8 @@ function init()
 
   topMenu = g_ui.createWidget('TopMenu', g_ui.getRootWidget())  
   g_keyboard.bindKeyDown('Ctrl+Shift+T', toggle)
-  
+
+
   if g_game.isOnline() then
     scheduleEvent(online, 10)
   end
@@ -268,16 +269,6 @@ function updateStatus()
       elseif data.playersonline then
         topMenu.onlineLabel:setText(data.playersonline .. " players online")
       end
-    end
-    if data.discord_online and topMenu.discordLabel then
-      topMenu.discordLabel:setText(data.discord_online)
-    end
-    if data.discord_link and topMenu.discordLabel and topMenu.discord then
-      local discordOnClick = function()
-        g_platform.openUrl(data.discord_link)
-      end
-      topMenu.discordLabel.onClick = discordOnClick
-      topMenu.discord.onClick = discordOnClick
     end
     statusUpdateEvent = scheduleEvent(updateStatus, 60000)
   end)

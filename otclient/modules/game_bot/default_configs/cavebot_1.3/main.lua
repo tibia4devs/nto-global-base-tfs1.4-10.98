@@ -9,9 +9,6 @@ UI.Separator()
 
 UI.Separator()
 
-UI.Button("Discord", function()
-  g_platform.openUrl("https://discord.gg/yhqBE4A")
-end)
 
 UI.Button("Forum", function()
   g_platform.openUrl("http://otclient.net/")
