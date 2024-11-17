@@ -8,5 +8,5 @@
 	<event type="death" name="PlayerDeath" script="playerdeath.lua" />
 	<event type="death" name="DropLoot" script="droploot.lua" />
 	<event type="extendedopcode" name="ExtendedOpcode" script="extendedopcode.lua" />
-	<event type="extendedopcode" name="foodeater" script="foodeater.lua" />
+	<event type="extendedopcode" name="JutsuList" script="extendedOpcodes/jutsulist.lua" />
 </creaturescripts>
