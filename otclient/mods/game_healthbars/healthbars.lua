@@ -1,0 +1,20 @@
+function init()
+  -- id 1 (health1)
+  g_healthBars.addHealthBackground("/images/bars/health1", -2, -2, 0, 2, 4)
+  g_healthBars.addHealthBackground("/images/bars/fogo", -15, -15, 0, 0, 4) 
+  g_healthBars.addHealthBackground("/images/bars/escuro", -15, -15, 0, 0, 4) 
+  g_healthBars.addHealthBackground("/images/bars/rainbow", -15, -15, 0, 0, 4)
+  g_healthBars.addHealthBackground("/images/bars/ghost", -15, -15, 0, 0, 4)
+  g_healthBars.addHealthBackground("/images/bars/bow", -15, -13, 0, 0, 4) 
+  g_healthBars.addHealthBackground("/images/bars/Effect1", -15, -13, 0, 0, 4) 
+  g_healthBars.addHealthBackground("/images/bars/Effect2", -15, -13, 0, 0, 4) 
+  g_healthBars.addHealthBackground("/images/bars/Effect3", -15, -13, 0, 0, 4) 
+  g_healthBars.addHealthBackground("/images/bars/Effect4", -15, -13, 0, 0, 4) 
+  g_healthBars.addHealthBackground("/images/bars/Effect5", -15, -13, 0, 0, 4) 
+  -- :addHealthBackground(const std::string& path, int offsetX, int offsetY, int barOffsetX, int barOffsetY, int height)
+  -- id 1 (mana1)
+  g_healthBars.addManaBackground("/images/bars/mana1", -2, -2, 0, 2, 4)
+end
+
+function terminate()
+end
