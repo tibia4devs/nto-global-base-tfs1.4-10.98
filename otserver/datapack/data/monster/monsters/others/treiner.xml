@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Treiner" nameDescription="a Treiner" race="blood" experience="0" speed="0" manacost="0">
+	<health now="100000000" max="100000000" />
+	<look type="10" corpse="6080" />
+	<targetchange interval="4000" chance="0" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="0" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="0" max="-0" />
+	</attacks>
+	<defenses armor="1" defense="1" />
+	<elements>
+		<element earthPercent="0" />
+		<element holyPercent="0" />
+		<element icePercent="0" />
+		<element deathPercent="0" />
+	</elements>
+	<voices interval="5000" chance="0">
+		<voice sentence="" />
+	</voices>
+	<loot>
+		<item name="gold coin" countmax="0" chance="0" />
+	</loot>
+</monster>
