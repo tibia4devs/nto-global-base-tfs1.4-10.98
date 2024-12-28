@@ -8,21 +8,20 @@ export async function createAccount(name: string, password: string, email: strin
     [name]
   );
 
-  console.log("existingAccount", existingAccount)
-
   if (existingAccount.length > 0) {
     return { success: false, message: "Já existe uma conta com este nome." };
   }
 
   const hashedPassword = getSha1Hash(password);
   const created = Math.floor(Date.now() / 1000);
-
+  const premiumEndsAt = created + 7 * 24 * 60 * 60;
+  
   const [result] = await mysql2Pool.query<ResultSetHeader>(
     `
-      INSERT INTO accounts (name, password, email, created, type, premdays) 
-      VALUES (?, ?, ?, ?, 0, 7)
+      INSERT INTO accounts (name, password, email, created, type, premium_ends_at) 
+      VALUES (?, ?, ?, ?, 0, ?)
     `,
-    [name, hashedPassword, email, created]
+    [name, hashedPassword, email, created, premiumEndsAt]
   );
 
   console.log('result', result)

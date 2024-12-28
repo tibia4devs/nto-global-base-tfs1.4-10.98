@@ -29,7 +29,7 @@ export default function Register() {
     setLoading(true);
 
     try {
-      const response = await fetch("/api/accounts/register", {
+      const response = await fetch("/api/accounts/createAccount", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -1,0 +1,6 @@
+-- Preparar Base
+1 - Vocações Iniciais
+2 - Monstros Iniciais
+3 - Itens Iniciais
+4 - Ilha Inicial
+5 - Konoha

@@ -2,18 +2,18 @@ import mysql2Pool from '@/lib/mysql2Connection';
 import { RowDataPacket, ResultSetHeader } from 'mysql2/promise';
 
 export const samplesVocation: { [vocation: number]: string } = {
-    1: "Naruto Sample",
-    2: "Sasuke Sample",
-    3: "Sakura Sample",
-    4: "Rock Lee Sample",
-    5: "Neji Sample",
-    6: "Tenten Sample",
-    7: "Kiba Sample",
-    8: "Hinata Sample",
-    9: "Shino Sample",
-    10: "Shikamaru Sample",
-    11: "Ino Sample",
-    12: "Chouji Sample",
+    1: "Naruto Classic Sample",
+    2: "Sasuke Classic Sample",
+    3: "Sakura Classic Sample",
+    4: "Rock Lee Classic Sample",
+    5: "Neji Classic Sample",
+    6: "Tenten Classic Sample",
+    7: "Kiba Classic Sample",
+    8: "Hinata Classic Sample",
+    9: "Shino Classic Sample",
+    10: "Shikamaru Classic Sample",
+    11: "Ino Classic Sample",
+    12: "Chouji Classic Sample",
 };
 
 export async function findSampleByName(name: string): Promise<RowDataPacket | null> {
