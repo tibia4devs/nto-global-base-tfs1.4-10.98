@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Tempo de geração: 12-Fev-2023 às 21:31
--- Versão do servidor: 5.7.41
--- versão do PHP: 7.4.20
+-- Tempo de geração: 19/01/2025 às 22:25
+-- Versão do servidor: 5.7.44
+-- Versão do PHP: 7.4.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `accounts`
+-- Estrutura para tabela `accounts`
 --
 
 CREATE TABLE `accounts` (
@@ -55,16 +55,17 @@ CREATE TABLE `accounts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `accounts`
+-- Despejando dados para a tabela `accounts`
 --
 
 INSERT INTO `accounts` (`id`, `name`, `password`, `secret`, `type`, `premium_ends_at`, `email`, `key`, `blocked`, `created`, `rlname`, `location`, `country`, `web_lastlogin`, `web_flags`, `email_hash`, `email_new`, `email_new_time`, `email_code`, `email_next`, `premium_points`, `email_verified`, `creation`, `vote`) VALUES
-(1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', NULL, 5, 0, 'admin@admin.com', '', 0, 1676234685, '', '', 'us', 0, 3, '', '', 0, '', 0, 0, 0, 0, 0);
+(1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', NULL, 6, 0, 'admin@admin.com', '', 0, 1676234685, '', '', 'us', 0, 3, '', '', 0, '', 0, 0, 0, 0, 0),
+(2, 'teste', 'e0f68134d29dc326d115de4c8fab8700a3c4b002', NULL, 0, 1736028031, 'teste@teste.com', '', 0, 1735423231, '', '', '', 0, 0, '', '', 0, '', 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `account_bans`
+-- Estrutura para tabela `account_bans`
 --
 
 CREATE TABLE `account_bans` (
@@ -78,7 +79,7 @@ CREATE TABLE `account_bans` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `account_ban_history`
+-- Estrutura para tabela `account_ban_history`
 --
 
 CREATE TABLE `account_ban_history` (
@@ -93,7 +94,7 @@ CREATE TABLE `account_ban_history` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `account_storage`
+-- Estrutura para tabela `account_storage`
 --
 
 CREATE TABLE `account_storage` (
@@ -105,7 +106,7 @@ CREATE TABLE `account_storage` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `account_viplist`
+-- Estrutura para tabela `account_viplist`
 --
 
 CREATE TABLE `account_viplist` (
@@ -119,7 +120,7 @@ CREATE TABLE `account_viplist` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `guilds`
+-- Estrutura para tabela `guilds`
 --
 
 CREATE TABLE `guilds` (
@@ -133,7 +134,7 @@ CREATE TABLE `guilds` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Acionadores `guilds`
+-- Gatilhos `guilds`
 --
 DELIMITER $$
 CREATE TRIGGER `oncreate_guilds` AFTER INSERT ON `guilds` FOR EACH ROW BEGIN
@@ -147,7 +148,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `guildwar_kills`
+-- Estrutura para tabela `guildwar_kills`
 --
 
 CREATE TABLE `guildwar_kills` (
@@ -163,7 +164,7 @@ CREATE TABLE `guildwar_kills` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `guild_invites`
+-- Estrutura para tabela `guild_invites`
 --
 
 CREATE TABLE `guild_invites` (
@@ -174,7 +175,7 @@ CREATE TABLE `guild_invites` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `guild_membership`
+-- Estrutura para tabela `guild_membership`
 --
 
 CREATE TABLE `guild_membership` (
@@ -187,7 +188,7 @@ CREATE TABLE `guild_membership` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `guild_ranks`
+-- Estrutura para tabela `guild_ranks`
 --
 
 CREATE TABLE `guild_ranks` (
@@ -200,7 +201,7 @@ CREATE TABLE `guild_ranks` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `guild_wars`
+-- Estrutura para tabela `guild_wars`
 --
 
 CREATE TABLE `guild_wars` (
@@ -217,7 +218,7 @@ CREATE TABLE `guild_wars` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `houses`
+-- Estrutura para tabela `houses`
 --
 
 CREATE TABLE `houses` (
@@ -239,7 +240,7 @@ CREATE TABLE `houses` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `house_lists`
+-- Estrutura para tabela `house_lists`
 --
 
 CREATE TABLE `house_lists` (
@@ -251,7 +252,7 @@ CREATE TABLE `house_lists` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ip_bans`
+-- Estrutura para tabela `ip_bans`
 --
 
 CREATE TABLE `ip_bans` (
@@ -265,7 +266,7 @@ CREATE TABLE `ip_bans` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `market_history`
+-- Estrutura para tabela `market_history`
 --
 
 CREATE TABLE `market_history` (
@@ -283,7 +284,7 @@ CREATE TABLE `market_history` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `market_offers`
+-- Estrutura para tabela `market_offers`
 --
 
 CREATE TABLE `market_offers` (
@@ -300,7 +301,7 @@ CREATE TABLE `market_offers` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `myaac_account_actions`
+-- Estrutura para tabela `myaac_account_actions`
 --
 
 CREATE TABLE `myaac_account_actions` (
@@ -312,7 +313,7 @@ CREATE TABLE `myaac_account_actions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `myaac_account_actions`
+-- Despejando dados para a tabela `myaac_account_actions`
 --
 
 INSERT INTO `myaac_account_actions` (`account_id`, `ip`, `ipv6`, `date`, `action`) VALUES
@@ -328,7 +329,7 @@ INSERT INTO `myaac_account_actions` (`account_id`, `ip`, `ipv6`, `date`, `action
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `myaac_admin_menu`
+-- Estrutura para tabela `myaac_admin_menu`
 --
 
 CREATE TABLE `myaac_admin_menu` (
@@ -343,7 +344,7 @@ CREATE TABLE `myaac_admin_menu` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `myaac_bugtracker`
+-- Estrutura para tabela `myaac_bugtracker`
 --
 
 CREATE TABLE `myaac_bugtracker` (
@@ -362,7 +363,7 @@ CREATE TABLE `myaac_bugtracker` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `myaac_changelog`
+-- Estrutura para tabela `myaac_changelog`
 --
 
 CREATE TABLE `myaac_changelog` (
@@ -376,7 +377,7 @@ CREATE TABLE `myaac_changelog` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `myaac_changelog`
+-- Despejando dados para a tabela `myaac_changelog`
 --
 
 INSERT INTO `myaac_changelog` (`id`, `body`, `type`, `where`, `date`, `player_id`, `hidden`) VALUES
@@ -385,7 +386,7 @@ INSERT INTO `myaac_changelog` (`id`, `body`, `type`, `where`, `date`, `player_id
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `myaac_charbazaar`
+-- Estrutura para tabela `myaac_charbazaar`
 --
 
 CREATE TABLE `myaac_charbazaar` (
@@ -404,7 +405,7 @@ CREATE TABLE `myaac_charbazaar` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `myaac_charbazaar_bid`
+-- Estrutura para tabela `myaac_charbazaar_bid`
 --
 
 CREATE TABLE `myaac_charbazaar_bid` (
@@ -418,7 +419,7 @@ CREATE TABLE `myaac_charbazaar_bid` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `myaac_config`
+-- Estrutura para tabela `myaac_config`
 --
 
 CREATE TABLE `myaac_config` (
@@ -428,7 +429,7 @@ CREATE TABLE `myaac_config` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `myaac_config`
+-- Despejando dados para a tabela `myaac_config`
 --
 
 INSERT INTO `myaac_config` (`id`, `name`, `value`) VALUES
@@ -445,7 +446,7 @@ INSERT INTO `myaac_config` (`id`, `name`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `myaac_faq`
+-- Estrutura para tabela `myaac_faq`
 --
 
 CREATE TABLE `myaac_faq` (
@@ -459,7 +460,7 @@ CREATE TABLE `myaac_faq` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `myaac_forum`
+-- Estrutura para tabela `myaac_forum`
 --
 
 CREATE TABLE `myaac_forum` (
@@ -486,7 +487,7 @@ CREATE TABLE `myaac_forum` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `myaac_forum_boards`
+-- Estrutura para tabela `myaac_forum_boards`
 --
 
 CREATE TABLE `myaac_forum_boards` (
@@ -501,7 +502,7 @@ CREATE TABLE `myaac_forum_boards` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `myaac_forum_boards`
+-- Despejando dados para a tabela `myaac_forum_boards`
 --
 
 INSERT INTO `myaac_forum_boards` (`id`, `name`, `description`, `ordering`, `guild`, `access`, `closed`, `hidden`) VALUES
@@ -514,7 +515,7 @@ INSERT INTO `myaac_forum_boards` (`id`, `name`, `description`, `ordering`, `guil
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `myaac_gallery`
+-- Estrutura para tabela `myaac_gallery`
 --
 
 CREATE TABLE `myaac_gallery` (
@@ -528,7 +529,7 @@ CREATE TABLE `myaac_gallery` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `myaac_gallery`
+-- Despejando dados para a tabela `myaac_gallery`
 --
 
 INSERT INTO `myaac_gallery` (`id`, `comment`, `image`, `thumb`, `author`, `ordering`, `hidden`) VALUES
@@ -537,7 +538,7 @@ INSERT INTO `myaac_gallery` (`id`, `comment`, `image`, `thumb`, `author`, `order
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `myaac_menu`
+-- Estrutura para tabela `myaac_menu`
 --
 
 CREATE TABLE `myaac_menu` (
@@ -553,7 +554,7 @@ CREATE TABLE `myaac_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `myaac_menu`
+-- Despejando dados para a tabela `myaac_menu`
 --
 
 INSERT INTO `myaac_menu` (`id`, `template`, `name`, `link`, `blank`, `color`, `category`, `ordering`, `enabled`) VALUES
@@ -595,7 +596,7 @@ INSERT INTO `myaac_menu` (`id`, `template`, `name`, `link`, `blank`, `color`, `c
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `myaac_monsters`
+-- Estrutura para tabela `myaac_monsters`
 --
 
 CREATE TABLE `myaac_monsters` (
@@ -632,7 +633,7 @@ CREATE TABLE `myaac_monsters` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `myaac_news`
+-- Estrutura para tabela `myaac_news`
 --
 
 CREATE TABLE `myaac_news` (
@@ -652,7 +653,7 @@ CREATE TABLE `myaac_news` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `myaac_news`
+-- Despejando dados para a tabela `myaac_news`
 --
 
 INSERT INTO `myaac_news` (`id`, `title`, `body`, `type`, `date`, `category`, `player_id`, `last_modified_by`, `last_modified_date`, `comments`, `article_text`, `article_image`, `hidden`) VALUES
@@ -662,7 +663,7 @@ INSERT INTO `myaac_news` (`id`, `title`, `body`, `type`, `date`, `category`, `pl
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `myaac_news_categories`
+-- Estrutura para tabela `myaac_news_categories`
 --
 
 CREATE TABLE `myaac_news_categories` (
@@ -674,7 +675,7 @@ CREATE TABLE `myaac_news_categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `myaac_news_categories`
+-- Despejando dados para a tabela `myaac_news_categories`
 --
 
 INSERT INTO `myaac_news_categories` (`id`, `name`, `description`, `icon_id`, `hidden`) VALUES
@@ -687,7 +688,7 @@ INSERT INTO `myaac_news_categories` (`id`, `name`, `description`, `icon_id`, `hi
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `myaac_notepad`
+-- Estrutura para tabela `myaac_notepad`
 --
 
 CREATE TABLE `myaac_notepad` (
@@ -699,7 +700,7 @@ CREATE TABLE `myaac_notepad` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `myaac_pages`
+-- Estrutura para tabela `myaac_pages`
 --
 
 CREATE TABLE `myaac_pages` (
@@ -716,7 +717,7 @@ CREATE TABLE `myaac_pages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `myaac_pages`
+-- Despejando dados para a tabela `myaac_pages`
 --
 
 INSERT INTO `myaac_pages` (`id`, `name`, `title`, `body`, `date`, `player_id`, `php`, `enable_tinymce`, `access`, `hidden`) VALUES
@@ -727,7 +728,7 @@ INSERT INTO `myaac_pages` (`id`, `name`, `title`, `body`, `date`, `player_id`, `
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `myaac_polls`
+-- Estrutura para tabela `myaac_polls`
 --
 
 CREATE TABLE `myaac_polls` (
@@ -743,7 +744,7 @@ CREATE TABLE `myaac_polls` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `myaac_polls_answers`
+-- Estrutura para tabela `myaac_polls_answers`
 --
 
 CREATE TABLE `myaac_polls_answers` (
@@ -756,7 +757,7 @@ CREATE TABLE `myaac_polls_answers` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `myaac_spells`
+-- Estrutura para tabela `myaac_spells`
 --
 
 CREATE TABLE `myaac_spells` (
@@ -780,7 +781,7 @@ CREATE TABLE `myaac_spells` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `myaac_spells`
+-- Despejando dados para a tabela `myaac_spells`
 --
 
 INSERT INTO `myaac_spells` (`id`, `spell`, `name`, `words`, `category`, `type`, `level`, `maglevel`, `mana`, `soul`, `conjure_id`, `conjure_count`, `reagent`, `item_id`, `premium`, `vocations`, `hidden`) VALUES
@@ -967,7 +968,7 @@ INSERT INTO `myaac_spells` (`id`, `spell`, `name`, `words`, `category`, `type`, 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `myaac_videos`
+-- Estrutura para tabela `myaac_videos`
 --
 
 CREATE TABLE `myaac_videos` (
@@ -982,7 +983,7 @@ CREATE TABLE `myaac_videos` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `myaac_visitors`
+-- Estrutura para tabela `myaac_visitors`
 --
 
 CREATE TABLE `myaac_visitors` (
@@ -994,7 +995,7 @@ CREATE TABLE `myaac_visitors` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `myaac_weapons`
+-- Estrutura para tabela `myaac_weapons`
 --
 
 CREATE TABLE `myaac_weapons` (
@@ -1005,7 +1006,7 @@ CREATE TABLE `myaac_weapons` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `myaac_weapons`
+-- Despejando dados para a tabela `myaac_weapons`
 --
 
 INSERT INTO `myaac_weapons` (`id`, `level`, `maglevel`, `vocations`) VALUES
@@ -1320,7 +1321,7 @@ INSERT INTO `myaac_weapons` (`id`, `level`, `maglevel`, `vocations`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `players`
+-- Estrutura para tabela `players`
 --
 
 CREATE TABLE `players` (
@@ -1385,19 +1386,27 @@ CREATE TABLE `players` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `players`
+-- Despejando dados para a tabela `players`
 --
 
 INSERT INTO `players` (`id`, `name`, `group_id`, `account_id`, `level`, `vocation`, `health`, `healthmax`, `experience`, `lookbody`, `lookfeet`, `lookhead`, `looklegs`, `looktype`, `lookaddons`, `direction`, `maglevel`, `mana`, `manamax`, `manaspent`, `soul`, `town_id`, `posx`, `posy`, `posz`, `conditions`, `cap`, `sex`, `lastlogin`, `lastip`, `save`, `skull`, `skulltime`, `lastlogout`, `blessings`, `onlinetime`, `deletion`, `balance`, `offlinetraining_time`, `offlinetraining_skill`, `stamina`, `skill_fist`, `skill_fist_tries`, `skill_club`, `skill_club_tries`, `skill_sword`, `skill_sword_tries`, `skill_axe`, `skill_axe_tries`, `skill_dist`, `skill_dist_tries`, `skill_shielding`, `skill_shielding_tries`, `skill_fishing`, `skill_fishing_tries`, `created`, `hidden`, `comment`) VALUES
-(1, 'Admin', 6, 1, 1, 0, 100, 100, 0, 10, 10, 10, 10, 136, 0, 2, 0, 100, 100, 0, 0, 1, 95, 126, 7, '', 0, 0, 1676236157, 16783532, 1, 0, 0, 1676236301, 0, 179, 0, 0, 43200, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1676234685, 0, ''),
-(2, 'Rook Sample', 1, 1, 1, 0, 150, 150, 0, 118, 114, 38, 57, 130, 0, 2, 0, 0, 0, 0, 100, 1, 1000, 1000, 7, '', 400, 1, 1676234687, 2130706433, 1, 0, 0, 1676234687, 0, 0, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 1676234687, 1, ''),
-(3, 'Sorcerer Sample', 1, 1, 8, 1, 185, 185, 4200, 118, 114, 38, 57, 130, 0, 2, 0, 90, 90, 0, 100, 1, 1000, 1000, 7, '', 470, 1, 1676234687, 2130706433, 1, 0, 0, 1676234687, 0, 0, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 1676234687, 1, ''),
-(4, 'Druid Sample', 1, 1, 8, 2, 185, 185, 4200, 118, 114, 38, 57, 130, 0, 2, 0, 90, 90, 0, 100, 1, 95, 117, 7, '', 470, 1, 1676236152, 16783532, 1, 0, 0, 1676236155, 0, 3, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 1676234687, 1, ''),
-(5, 'Paladin Sample', 1, 1, 8, 3, 185, 185, 4200, 118, 114, 38, 57, 129, 0, 2, 0, 90, 90, 0, 100, 1, 1000, 1000, 7, '', 470, 1, 1676234687, 2130706433, 1, 0, 0, 1676234687, 0, 0, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 1676234687, 1, ''),
-(6, 'Knight Sample', 1, 1, 8, 4, 185, 185, 4200, 118, 114, 38, 57, 131, 0, 2, 0, 90, 90, 0, 100, 1, 95, 117, 7, '', 470, 1, 1676236155, 16783532, 1, 0, 0, 1676236157, 0, 2, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 1676234687, 1, '');
+(1, 'Admin', 6, 1, 1, 0, 100, 100, 0, 10, 10, 10, 10, 2, 0, 2, 0, 100, 100, 0, 0, 1, 10193, 10211, 7, '', 0, 0, 1736636488, 16784300, 1, 0, 0, 1736676000, 0, 854813, 0, 0, 43200, -1, 2520, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1676234685, 0, ''),
+(2, 'Naruto Classic Sample', 1, 1, 1, 1, 1000, 1000, 0, 0, 0, 0, 0, 1, 0, 2, 0, 1000, 1000, 0, 100, 1, 10200, 10200, 7, '', 500, 0, 1735425243, 16784300, 1, 0, 0, 1735425244, 0, 1, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 1676234687, 1, ''),
+(3, 'Sasuke Classic Sample', 1, 1, 1, 2, 1000, 1000, 0, 0, 0, 0, 0, 4, 0, 2, 0, 1000, 1000, 0, 100, 1, 10200, 10200, 7, '', 500, 1, 1735425247, 16784300, 1, 0, 0, 1735425248, 0, 1, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 1676234687, 1, ''),
+(4, 'Sakura Classic Sample', 1, 1, 1, 3, 1000, 1000, 0, 0, 0, 0, 0, 7, 0, 2, 0, 1000, 1000, 0, 100, 1, 10200, 10200, 7, '', 500, 1, 1735425246, 16784300, 1, 0, 0, 1735425247, 0, 1, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 1676234687, 1, ''),
+(5, 'Rock Lee Classic Sample', 1, 1, 1, 4, 1000, 1000, 0, 0, 0, 0, 0, 14, 0, 2, 0, 1000, 1000, 0, 100, 1, 10200, 10200, 7, '', 500, 1, 1735425245, 16784300, 1, 0, 0, 1735425246, 0, 1, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 1676234687, 1, ''),
+(6, 'Neji Classic Sample', 1, 1, 1, 5, 1000, 1000, 0, 0, 0, 0, 0, 11, 0, 2, 0, 1000, 1000, 0, 100, 1, 10200, 10200, 7, '', 500, 1, 1735425244, 16784300, 1, 0, 0, 1735425245, 0, 1, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 1676234687, 1, ''),
+(7, 'Tenten Classic Sample', 1, 1, 1, 6, 1000, 1000, 0, 0, 0, 0, 0, 17, 0, 2, 0, 1000, 1000, 0, 100, 1, 10200, 10200, 7, '', 500, 1, 1735425251, 16784300, 1, 0, 0, 1735425342, 0, 91, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 1676234687, 1, ''),
+(8, 'Kiba Classic Sample', 1, 1, 1, 7, 1000, 1000, 0, 0, 0, 0, 0, 29, 0, 2, 0, 1000, 1000, 0, 100, 1, 10200, 10200, 7, '', 500, 1, 1735425241, 16784300, 1, 0, 0, 1735425243, 0, 2, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 1676234687, 1, ''),
+(9, 'Hinata Classic Sample', 1, 1, 1, 8, 1000, 1000, 0, 0, 0, 0, 0, 26, 0, 2, 0, 1000, 1000, 0, 100, 1, 10200, 10200, 7, '', 500, 1, 1735425238, 16784300, 1, 0, 0, 1735425240, 0, 2, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 1676234687, 1, ''),
+(10, 'Shino Classic Sample', 1, 1, 1, 9, 1000, 1000, 0, 0, 0, 0, 0, 32, 0, 2, 0, 1000, 1000, 0, 100, 1, 10200, 10200, 7, '', 500, 1, 1735425250, 16784300, 1, 0, 0, 1735425251, 0, 1, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 1676234687, 1, ''),
+(11, 'Shikamaru Classic Sample', 1, 1, 1, 10, 1000, 1000, 0, 0, 0, 0, 0, 20, 0, 2, 0, 1000, 1000, 0, 100, 1, 10200, 10200, 7, '', 500, 1, 1735425248, 16784300, 1, 0, 0, 1735425250, 0, 2, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 1676234687, 1, ''),
+(12, 'Ino Classic Sample', 1, 1, 1, 11, 1000, 1000, 0, 0, 0, 0, 0, 34, 0, 2, 0, 1000, 1000, 0, 100, 1, 10200, 10201, 7, '', 500, 1, 1735425240, 16784300, 1, 0, 0, 1735425241, 0, 1, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 1676234687, 1, ''),
+(13, 'Chouji Classic Sample', 1, 1, 1, 11, 1000, 1000, 0, 0, 0, 0, 0, 23, 0, 2, 0, 1000, 1000, 0, 100, 1, 10199, 10200, 7, '', 500, 1, 1735494974, 16784300, 1, 0, 0, 1735495019, 0, 23564, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 1676234687, 1, ''),
+(15, 'Sasuke Test', 1, 2, 32, 2, 2843, 4100, 472500, 0, 0, 0, 0, 4, 0, 2, 1, 2485, 3325, 920, 100, 1, 10195, 10211, 7, '', 810, 1, 1736636667, 16784300, 1, 0, 0, 1736637631, 0, 168270, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 26, 119, 10, 0, 10, 0, 10, 0, 10, 0, 1735495278, 1, '');
 
 --
--- Acionadores `players`
+-- Gatilhos `players`
 --
 DELIMITER $$
 CREATE TRIGGER `ondelete_players` BEFORE DELETE ON `players` FOR EACH ROW BEGIN
@@ -1409,7 +1418,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `players_online`
+-- Estrutura para tabela `players_online`
 --
 
 CREATE TABLE `players_online` (
@@ -1419,7 +1428,7 @@ CREATE TABLE `players_online` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `player_deaths`
+-- Estrutura para tabela `player_deaths`
 --
 
 CREATE TABLE `player_deaths` (
@@ -1437,7 +1446,7 @@ CREATE TABLE `player_deaths` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `player_depotitems`
+-- Estrutura para tabela `player_depotitems`
 --
 
 CREATE TABLE `player_depotitems` (
@@ -1452,7 +1461,7 @@ CREATE TABLE `player_depotitems` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `player_inboxitems`
+-- Estrutura para tabela `player_inboxitems`
 --
 
 CREATE TABLE `player_inboxitems` (
@@ -1467,7 +1476,7 @@ CREATE TABLE `player_inboxitems` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `player_items`
+-- Estrutura para tabela `player_items`
 --
 
 CREATE TABLE `player_items` (
@@ -1480,20 +1489,21 @@ CREATE TABLE `player_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `player_items`
+-- Despejando dados para a tabela `player_items`
 --
 
 INSERT INTO `player_items` (`player_id`, `pid`, `sid`, `itemtype`, `count`, `attributes`) VALUES
-(1, 3, 101, 1987, 1, ''),
-(1, 4, 102, 2651, 1, ''),
-(1, 6, 103, 2382, 1, ''),
-(1, 10, 104, 2050, 1, ''),
-(1, 101, 105, 2674, 1, 0x0f01);
+(15, 6, 101, 2383, 1, ''),
+(1, 3, 101, 1988, 1, ''),
+(1, 6, 102, 2400, 1, ''),
+(1, 10, 103, 2050, 1, ''),
+(1, 101, 104, 1988, 1, ''),
+(1, 101, 105, 2160, 6, 0x0f06);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `player_namelocks`
+-- Estrutura para tabela `player_namelocks`
 --
 
 CREATE TABLE `player_namelocks` (
@@ -1506,7 +1516,7 @@ CREATE TABLE `player_namelocks` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `player_spells`
+-- Estrutura para tabela `player_spells`
 --
 
 CREATE TABLE `player_spells` (
@@ -1517,7 +1527,7 @@ CREATE TABLE `player_spells` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `player_storage`
+-- Estrutura para tabela `player_storage`
 --
 
 CREATE TABLE `player_storage` (
@@ -1526,10 +1536,17 @@ CREATE TABLE `player_storage` (
   `value` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Despejando dados para a tabela `player_storage`
+--
+
+INSERT INTO `player_storage` (`player_id`, `key`, `value`) VALUES
+(1, 10002011, 95);
+
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `player_storeinboxitems`
+-- Estrutura para tabela `player_storeinboxitems`
 --
 
 CREATE TABLE `player_storeinboxitems` (
@@ -1544,7 +1561,7 @@ CREATE TABLE `player_storeinboxitems` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `server_config`
+-- Estrutura para tabela `server_config`
 --
 
 CREATE TABLE `server_config` (
@@ -1553,19 +1570,19 @@ CREATE TABLE `server_config` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `server_config`
+-- Despejando dados para a tabela `server_config`
 --
 
 INSERT INTO `server_config` (`config`, `value`) VALUES
 ('db_version', '30'),
-('motd_hash', ''),
-('motd_num', '0'),
-('players_record', '1');
+('motd_hash', 'bd746a8e830237f7a1380be98802a0483741cff8'),
+('motd_num', '1'),
+('players_record', '2');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tile_store`
+-- Estrutura para tabela `tile_store`
 --
 
 CREATE TABLE `tile_store` (
@@ -1576,7 +1593,7 @@ CREATE TABLE `tile_store` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `towns`
+-- Estrutura para tabela `towns`
 --
 
 CREATE TABLE `towns` (
@@ -1588,20 +1605,16 @@ CREATE TABLE `towns` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `towns`
+-- Despejando dados para a tabela `towns`
 --
 
 INSERT INTO `towns` (`id`, `name`, `posx`, `posy`, `posz`) VALUES
-(1, 'Trekolt', 95, 117, 7),
-(2, 'Rhyves', 159, 387, 6),
-(3, 'Varak', 242, 429, 12),
-(4, 'Jorvik', 496, 172, 7),
-(5, 'Saund', 240, 566, 7);
+(1, 'Konoha', 10200, 10200, 7);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `znote`
+-- Estrutura para tabela `znote`
 --
 
 CREATE TABLE `znote` (
@@ -1612,7 +1625,7 @@ CREATE TABLE `znote` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `znote`
+-- Despejando dados para a tabela `znote`
 --
 
 INSERT INTO `znote` (`id`, `version`, `installed`, `cached`) VALUES
@@ -1622,7 +1635,7 @@ INSERT INTO `znote` (`id`, `version`, `installed`, `cached`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `znote_accounts`
+-- Estrutura para tabela `znote_accounts`
 --
 
 CREATE TABLE `znote_accounts` (
@@ -1639,7 +1652,7 @@ CREATE TABLE `znote_accounts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `znote_accounts`
+-- Despejando dados para a tabela `znote_accounts`
 --
 
 INSERT INTO `znote_accounts` (`id`, `account_id`, `ip`, `created`, `points`, `cooldown`, `active`, `activekey`, `flag`, `secret`) VALUES
@@ -1649,7 +1662,7 @@ INSERT INTO `znote_accounts` (`id`, `account_id`, `ip`, `created`, `points`, `co
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `znote_changelog`
+-- Estrutura para tabela `znote_changelog`
 --
 
 CREATE TABLE `znote_changelog` (
@@ -1663,7 +1676,7 @@ CREATE TABLE `znote_changelog` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `znote_deleted_characters`
+-- Estrutura para tabela `znote_deleted_characters`
 --
 
 CREATE TABLE `znote_deleted_characters` (
@@ -1677,7 +1690,7 @@ CREATE TABLE `znote_deleted_characters` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `znote_forum`
+-- Estrutura para tabela `znote_forum`
 --
 
 CREATE TABLE `znote_forum` (
@@ -1690,7 +1703,7 @@ CREATE TABLE `znote_forum` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `znote_forum`
+-- Despejando dados para a tabela `znote_forum`
 --
 
 INSERT INTO `znote_forum` (`id`, `name`, `access`, `closed`, `hidden`, `guild_id`) VALUES
@@ -1706,7 +1719,7 @@ INSERT INTO `znote_forum` (`id`, `name`, `access`, `closed`, `hidden`, `guild_id
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `znote_forum_posts`
+-- Estrutura para tabela `znote_forum_posts`
 --
 
 CREATE TABLE `znote_forum_posts` (
@@ -1722,7 +1735,7 @@ CREATE TABLE `znote_forum_posts` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `znote_forum_threads`
+-- Estrutura para tabela `znote_forum_threads`
 --
 
 CREATE TABLE `znote_forum_threads` (
@@ -1742,7 +1755,7 @@ CREATE TABLE `znote_forum_threads` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `znote_global_storage`
+-- Estrutura para tabela `znote_global_storage`
 --
 
 CREATE TABLE `znote_global_storage` (
@@ -1753,7 +1766,7 @@ CREATE TABLE `znote_global_storage` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `znote_guild_wars`
+-- Estrutura para tabela `znote_guild_wars`
 --
 
 CREATE TABLE `znote_guild_wars` (
@@ -1764,7 +1777,7 @@ CREATE TABLE `znote_guild_wars` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `znote_images`
+-- Estrutura para tabela `znote_images`
 --
 
 CREATE TABLE `znote_images` (
@@ -1780,7 +1793,7 @@ CREATE TABLE `znote_images` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `znote_news`
+-- Estrutura para tabela `znote_news`
 --
 
 CREATE TABLE `znote_news` (
@@ -1794,7 +1807,7 @@ CREATE TABLE `znote_news` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `znote_paygol`
+-- Estrutura para tabela `znote_paygol`
 --
 
 CREATE TABLE `znote_paygol` (
@@ -1816,7 +1829,7 @@ CREATE TABLE `znote_paygol` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `znote_paypal`
+-- Estrutura para tabela `znote_paypal`
 --
 
 CREATE TABLE `znote_paypal` (
@@ -1831,7 +1844,7 @@ CREATE TABLE `znote_paypal` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `znote_players`
+-- Estrutura para tabela `znote_players`
 --
 
 CREATE TABLE `znote_players` (
@@ -1843,7 +1856,7 @@ CREATE TABLE `znote_players` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `znote_players`
+-- Despejando dados para a tabela `znote_players`
 --
 
 INSERT INTO `znote_players` (`id`, `player_id`, `created`, `hide_char`, `comment`) VALUES
@@ -1853,7 +1866,7 @@ INSERT INTO `znote_players` (`id`, `player_id`, `created`, `hide_char`, `comment
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `znote_player_reports`
+-- Estrutura para tabela `znote_player_reports`
 --
 
 CREATE TABLE `znote_player_reports` (
@@ -1870,7 +1883,7 @@ CREATE TABLE `znote_player_reports` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `znote_shop`
+-- Estrutura para tabela `znote_shop`
 --
 
 CREATE TABLE `znote_shop` (
@@ -1885,7 +1898,7 @@ CREATE TABLE `znote_shop` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `znote_shop_logs`
+-- Estrutura para tabela `znote_shop_logs`
 --
 
 CREATE TABLE `znote_shop_logs` (
@@ -1902,7 +1915,7 @@ CREATE TABLE `znote_shop_logs` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `znote_shop_orders`
+-- Estrutura para tabela `znote_shop_orders`
 --
 
 CREATE TABLE `znote_shop_orders` (
@@ -1917,7 +1930,7 @@ CREATE TABLE `znote_shop_orders` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `znote_tickets`
+-- Estrutura para tabela `znote_tickets`
 --
 
 CREATE TABLE `znote_tickets` (
@@ -1934,7 +1947,7 @@ CREATE TABLE `znote_tickets` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `znote_tickets_replies`
+-- Estrutura para tabela `znote_tickets_replies`
 --
 
 CREATE TABLE `znote_tickets_replies` (
@@ -1948,7 +1961,7 @@ CREATE TABLE `znote_tickets_replies` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `znote_visitors`
+-- Estrutura para tabela `znote_visitors`
 --
 
 CREATE TABLE `znote_visitors` (
@@ -1960,7 +1973,7 @@ CREATE TABLE `znote_visitors` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `znote_visitors_details`
+-- Estrutura para tabela `znote_visitors_details`
 --
 
 CREATE TABLE `znote_visitors_details` (
@@ -1974,7 +1987,7 @@ CREATE TABLE `znote_visitors_details` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `z_polls`
+-- Estrutura para tabela `z_polls`
 --
 
 CREATE TABLE `z_polls` (
@@ -1990,7 +2003,7 @@ CREATE TABLE `z_polls` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `z_polls_answers`
+-- Estrutura para tabela `z_polls_answers`
 --
 
 CREATE TABLE `z_polls_answers` (
@@ -2005,21 +2018,21 @@ CREATE TABLE `z_polls_answers` (
 --
 
 --
--- Índices para tabela `accounts`
+-- Índices de tabela `accounts`
 --
 ALTER TABLE `accounts`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `name` (`name`);
 
 --
--- Índices para tabela `account_bans`
+-- Índices de tabela `account_bans`
 --
 ALTER TABLE `account_bans`
   ADD PRIMARY KEY (`account_id`),
   ADD KEY `banned_by` (`banned_by`);
 
 --
--- Índices para tabela `account_ban_history`
+-- Índices de tabela `account_ban_history`
 --
 ALTER TABLE `account_ban_history`
   ADD PRIMARY KEY (`id`),
@@ -2027,20 +2040,20 @@ ALTER TABLE `account_ban_history`
   ADD KEY `banned_by` (`banned_by`);
 
 --
--- Índices para tabela `account_storage`
+-- Índices de tabela `account_storage`
 --
 ALTER TABLE `account_storage`
   ADD PRIMARY KEY (`account_id`,`key`);
 
 --
--- Índices para tabela `account_viplist`
+-- Índices de tabela `account_viplist`
 --
 ALTER TABLE `account_viplist`
   ADD UNIQUE KEY `account_player_index` (`account_id`,`player_id`),
   ADD KEY `player_id` (`player_id`);
 
 --
--- Índices para tabela `guilds`
+-- Índices de tabela `guilds`
 --
 ALTER TABLE `guilds`
   ADD PRIMARY KEY (`id`),
@@ -2048,21 +2061,21 @@ ALTER TABLE `guilds`
   ADD UNIQUE KEY `ownerid` (`ownerid`);
 
 --
--- Índices para tabela `guildwar_kills`
+-- Índices de tabela `guildwar_kills`
 --
 ALTER TABLE `guildwar_kills`
   ADD PRIMARY KEY (`id`),
   ADD KEY `warid` (`warid`);
 
 --
--- Índices para tabela `guild_invites`
+-- Índices de tabela `guild_invites`
 --
 ALTER TABLE `guild_invites`
   ADD PRIMARY KEY (`player_id`,`guild_id`),
   ADD KEY `guild_id` (`guild_id`);
 
 --
--- Índices para tabela `guild_membership`
+-- Índices de tabela `guild_membership`
 --
 ALTER TABLE `guild_membership`
   ADD PRIMARY KEY (`player_id`),
@@ -2070,14 +2083,14 @@ ALTER TABLE `guild_membership`
   ADD KEY `rank_id` (`rank_id`);
 
 --
--- Índices para tabela `guild_ranks`
+-- Índices de tabela `guild_ranks`
 --
 ALTER TABLE `guild_ranks`
   ADD PRIMARY KEY (`id`),
   ADD KEY `guild_id` (`guild_id`);
 
 --
--- Índices para tabela `guild_wars`
+-- Índices de tabela `guild_wars`
 --
 ALTER TABLE `guild_wars`
   ADD PRIMARY KEY (`id`),
@@ -2085,7 +2098,7 @@ ALTER TABLE `guild_wars`
   ADD KEY `guild2` (`guild2`);
 
 --
--- Índices para tabela `houses`
+-- Índices de tabela `houses`
 --
 ALTER TABLE `houses`
   ADD PRIMARY KEY (`id`),
@@ -2093,27 +2106,27 @@ ALTER TABLE `houses`
   ADD KEY `town_id` (`town_id`);
 
 --
--- Índices para tabela `house_lists`
+-- Índices de tabela `house_lists`
 --
 ALTER TABLE `house_lists`
   ADD KEY `house_id` (`house_id`);
 
 --
--- Índices para tabela `ip_bans`
+-- Índices de tabela `ip_bans`
 --
 ALTER TABLE `ip_bans`
   ADD PRIMARY KEY (`ip`),
   ADD KEY `banned_by` (`banned_by`);
 
 --
--- Índices para tabela `market_history`
+-- Índices de tabela `market_history`
 --
 ALTER TABLE `market_history`
   ADD PRIMARY KEY (`id`),
   ADD KEY `player_id` (`player_id`,`sale`);
 
 --
--- Índices para tabela `market_offers`
+-- Índices de tabela `market_offers`
 --
 ALTER TABLE `market_offers`
   ADD PRIMARY KEY (`id`),
@@ -2122,143 +2135,143 @@ ALTER TABLE `market_offers`
   ADD KEY `player_id` (`player_id`);
 
 --
--- Índices para tabela `myaac_account_actions`
+-- Índices de tabela `myaac_account_actions`
 --
 ALTER TABLE `myaac_account_actions`
   ADD KEY `account_id` (`account_id`);
 
 --
--- Índices para tabela `myaac_admin_menu`
+-- Índices de tabela `myaac_admin_menu`
 --
 ALTER TABLE `myaac_admin_menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `myaac_bugtracker`
+-- Índices de tabela `myaac_bugtracker`
 --
 ALTER TABLE `myaac_bugtracker`
   ADD PRIMARY KEY (`uid`);
 
 --
--- Índices para tabela `myaac_changelog`
+-- Índices de tabela `myaac_changelog`
 --
 ALTER TABLE `myaac_changelog`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `myaac_charbazaar`
+-- Índices de tabela `myaac_charbazaar`
 --
 ALTER TABLE `myaac_charbazaar`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `myaac_charbazaar_bid`
+-- Índices de tabela `myaac_charbazaar_bid`
 --
 ALTER TABLE `myaac_charbazaar_bid`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `myaac_config`
+-- Índices de tabela `myaac_config`
 --
 ALTER TABLE `myaac_config`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `name` (`name`);
 
 --
--- Índices para tabela `myaac_faq`
+-- Índices de tabela `myaac_faq`
 --
 ALTER TABLE `myaac_faq`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `myaac_forum`
+-- Índices de tabela `myaac_forum`
 --
 ALTER TABLE `myaac_forum`
   ADD PRIMARY KEY (`id`),
   ADD KEY `section` (`section`);
 
 --
--- Índices para tabela `myaac_forum_boards`
+-- Índices de tabela `myaac_forum_boards`
 --
 ALTER TABLE `myaac_forum_boards`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `myaac_gallery`
+-- Índices de tabela `myaac_gallery`
 --
 ALTER TABLE `myaac_gallery`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `myaac_menu`
+-- Índices de tabela `myaac_menu`
 --
 ALTER TABLE `myaac_menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `myaac_monsters`
+-- Índices de tabela `myaac_monsters`
 --
 ALTER TABLE `myaac_monsters`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `myaac_news`
+-- Índices de tabela `myaac_news`
 --
 ALTER TABLE `myaac_news`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `myaac_news_categories`
+-- Índices de tabela `myaac_news_categories`
 --
 ALTER TABLE `myaac_news_categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `myaac_notepad`
+-- Índices de tabela `myaac_notepad`
 --
 ALTER TABLE `myaac_notepad`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `myaac_pages`
+-- Índices de tabela `myaac_pages`
 --
 ALTER TABLE `myaac_pages`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `name` (`name`);
 
 --
--- Índices para tabela `myaac_polls`
+-- Índices de tabela `myaac_polls`
 --
 ALTER TABLE `myaac_polls`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `myaac_spells`
+-- Índices de tabela `myaac_spells`
 --
 ALTER TABLE `myaac_spells`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `name` (`name`);
 
 --
--- Índices para tabela `myaac_videos`
+-- Índices de tabela `myaac_videos`
 --
 ALTER TABLE `myaac_videos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `myaac_visitors`
+-- Índices de tabela `myaac_visitors`
 --
 ALTER TABLE `myaac_visitors`
   ADD UNIQUE KEY `ip` (`ip`);
 
 --
--- Índices para tabela `myaac_weapons`
+-- Índices de tabela `myaac_weapons`
 --
 ALTER TABLE `myaac_weapons`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `players`
+-- Índices de tabela `players`
 --
 ALTER TABLE `players`
   ADD PRIMARY KEY (`id`),
@@ -2267,13 +2280,13 @@ ALTER TABLE `players`
   ADD KEY `vocation` (`vocation`);
 
 --
--- Índices para tabela `players_online`
+-- Índices de tabela `players_online`
 --
 ALTER TABLE `players_online`
   ADD PRIMARY KEY (`player_id`);
 
 --
--- Índices para tabela `player_deaths`
+-- Índices de tabela `player_deaths`
 --
 ALTER TABLE `player_deaths`
   ADD KEY `player_id` (`player_id`),
@@ -2281,215 +2294,215 @@ ALTER TABLE `player_deaths`
   ADD KEY `mostdamage_by` (`mostdamage_by`);
 
 --
--- Índices para tabela `player_depotitems`
+-- Índices de tabela `player_depotitems`
 --
 ALTER TABLE `player_depotitems`
   ADD UNIQUE KEY `player_id_2` (`player_id`,`sid`);
 
 --
--- Índices para tabela `player_inboxitems`
+-- Índices de tabela `player_inboxitems`
 --
 ALTER TABLE `player_inboxitems`
   ADD UNIQUE KEY `player_id_2` (`player_id`,`sid`);
 
 --
--- Índices para tabela `player_items`
+-- Índices de tabela `player_items`
 --
 ALTER TABLE `player_items`
   ADD KEY `player_id` (`player_id`),
   ADD KEY `sid` (`sid`);
 
 --
--- Índices para tabela `player_namelocks`
+-- Índices de tabela `player_namelocks`
 --
 ALTER TABLE `player_namelocks`
   ADD PRIMARY KEY (`player_id`),
   ADD KEY `namelocked_by` (`namelocked_by`);
 
 --
--- Índices para tabela `player_spells`
+-- Índices de tabela `player_spells`
 --
 ALTER TABLE `player_spells`
   ADD KEY `player_id` (`player_id`);
 
 --
--- Índices para tabela `player_storage`
+-- Índices de tabela `player_storage`
 --
 ALTER TABLE `player_storage`
   ADD PRIMARY KEY (`player_id`,`key`);
 
 --
--- Índices para tabela `player_storeinboxitems`
+-- Índices de tabela `player_storeinboxitems`
 --
 ALTER TABLE `player_storeinboxitems`
   ADD UNIQUE KEY `player_id_2` (`player_id`,`sid`);
 
 --
--- Índices para tabela `server_config`
+-- Índices de tabela `server_config`
 --
 ALTER TABLE `server_config`
   ADD PRIMARY KEY (`config`);
 
 --
--- Índices para tabela `tile_store`
+-- Índices de tabela `tile_store`
 --
 ALTER TABLE `tile_store`
   ADD KEY `house_id` (`house_id`);
 
 --
--- Índices para tabela `towns`
+-- Índices de tabela `towns`
 --
 ALTER TABLE `towns`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `name` (`name`);
 
 --
--- Índices para tabela `znote`
+-- Índices de tabela `znote`
 --
 ALTER TABLE `znote`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `znote_accounts`
+-- Índices de tabela `znote_accounts`
 --
 ALTER TABLE `znote_accounts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `znote_changelog`
+-- Índices de tabela `znote_changelog`
 --
 ALTER TABLE `znote_changelog`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `znote_deleted_characters`
+-- Índices de tabela `znote_deleted_characters`
 --
 ALTER TABLE `znote_deleted_characters`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `znote_forum`
+-- Índices de tabela `znote_forum`
 --
 ALTER TABLE `znote_forum`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `znote_forum_posts`
+-- Índices de tabela `znote_forum_posts`
 --
 ALTER TABLE `znote_forum_posts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `znote_forum_threads`
+-- Índices de tabela `znote_forum_threads`
 --
 ALTER TABLE `znote_forum_threads`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `znote_global_storage`
+-- Índices de tabela `znote_global_storage`
 --
 ALTER TABLE `znote_global_storage`
   ADD UNIQUE KEY `key` (`key`);
 
 --
--- Índices para tabela `znote_guild_wars`
+-- Índices de tabela `znote_guild_wars`
 --
 ALTER TABLE `znote_guild_wars`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `znote_images`
+-- Índices de tabela `znote_images`
 --
 ALTER TABLE `znote_images`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `znote_news`
+-- Índices de tabela `znote_news`
 --
 ALTER TABLE `znote_news`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `znote_paygol`
+-- Índices de tabela `znote_paygol`
 --
 ALTER TABLE `znote_paygol`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `znote_paypal`
+-- Índices de tabela `znote_paypal`
 --
 ALTER TABLE `znote_paypal`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `znote_players`
+-- Índices de tabela `znote_players`
 --
 ALTER TABLE `znote_players`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `znote_player_reports`
+-- Índices de tabela `znote_player_reports`
 --
 ALTER TABLE `znote_player_reports`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `znote_shop`
+-- Índices de tabela `znote_shop`
 --
 ALTER TABLE `znote_shop`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `znote_shop_logs`
+-- Índices de tabela `znote_shop_logs`
 --
 ALTER TABLE `znote_shop_logs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `znote_shop_orders`
+-- Índices de tabela `znote_shop_orders`
 --
 ALTER TABLE `znote_shop_orders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `znote_tickets`
+-- Índices de tabela `znote_tickets`
 --
 ALTER TABLE `znote_tickets`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `znote_tickets_replies`
+-- Índices de tabela `znote_tickets_replies`
 --
 ALTER TABLE `znote_tickets_replies`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `znote_visitors`
+-- Índices de tabela `znote_visitors`
 --
 ALTER TABLE `znote_visitors`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `znote_visitors_details`
+-- Índices de tabela `znote_visitors_details`
 --
 ALTER TABLE `znote_visitors_details`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `z_polls`
+-- Índices de tabela `z_polls`
 --
 ALTER TABLE `z_polls`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
 -- AUTO_INCREMENT de tabela `accounts`
 --
 ALTER TABLE `accounts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `account_ban_history`
@@ -2639,13 +2652,13 @@ ALTER TABLE `myaac_videos`
 -- AUTO_INCREMENT de tabela `players`
 --
 ALTER TABLE `players`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `towns`
 --
 ALTER TABLE `towns`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `znote`
@@ -2780,57 +2793,57 @@ ALTER TABLE `z_polls`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Restrições para despejos de tabelas
+-- Restrições para tabelas despejadas
 --
 
 --
--- Limitadores para a tabela `account_bans`
+-- Restrições para tabelas `account_bans`
 --
 ALTER TABLE `account_bans`
   ADD CONSTRAINT `account_bans_ibfk_1` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `account_bans_ibfk_2` FOREIGN KEY (`banned_by`) REFERENCES `players` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Limitadores para a tabela `account_ban_history`
+-- Restrições para tabelas `account_ban_history`
 --
 ALTER TABLE `account_ban_history`
   ADD CONSTRAINT `account_ban_history_ibfk_1` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `account_ban_history_ibfk_2` FOREIGN KEY (`banned_by`) REFERENCES `players` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Limitadores para a tabela `account_storage`
+-- Restrições para tabelas `account_storage`
 --
 ALTER TABLE `account_storage`
   ADD CONSTRAINT `account_storage_ibfk_1` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE CASCADE;
 
 --
--- Limitadores para a tabela `account_viplist`
+-- Restrições para tabelas `account_viplist`
 --
 ALTER TABLE `account_viplist`
   ADD CONSTRAINT `account_viplist_ibfk_1` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `account_viplist_ibfk_2` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`) ON DELETE CASCADE;
 
 --
--- Limitadores para a tabela `guilds`
+-- Restrições para tabelas `guilds`
 --
 ALTER TABLE `guilds`
   ADD CONSTRAINT `guilds_ibfk_1` FOREIGN KEY (`ownerid`) REFERENCES `players` (`id`) ON DELETE CASCADE;
 
 --
--- Limitadores para a tabela `guildwar_kills`
+-- Restrições para tabelas `guildwar_kills`
 --
 ALTER TABLE `guildwar_kills`
   ADD CONSTRAINT `guildwar_kills_ibfk_1` FOREIGN KEY (`warid`) REFERENCES `guild_wars` (`id`) ON DELETE CASCADE;
 
 --
--- Limitadores para a tabela `guild_invites`
+-- Restrições para tabelas `guild_invites`
 --
 ALTER TABLE `guild_invites`
   ADD CONSTRAINT `guild_invites_ibfk_1` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `guild_invites_ibfk_2` FOREIGN KEY (`guild_id`) REFERENCES `guilds` (`id`) ON DELETE CASCADE;
 
 --
--- Limitadores para a tabela `guild_membership`
+-- Restrições para tabelas `guild_membership`
 --
 ALTER TABLE `guild_membership`
   ADD CONSTRAINT `guild_membership_ibfk_1` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -2838,98 +2851,98 @@ ALTER TABLE `guild_membership`
   ADD CONSTRAINT `guild_membership_ibfk_3` FOREIGN KEY (`rank_id`) REFERENCES `guild_ranks` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Limitadores para a tabela `guild_ranks`
+-- Restrições para tabelas `guild_ranks`
 --
 ALTER TABLE `guild_ranks`
   ADD CONSTRAINT `guild_ranks_ibfk_1` FOREIGN KEY (`guild_id`) REFERENCES `guilds` (`id`) ON DELETE CASCADE;
 
 --
--- Limitadores para a tabela `house_lists`
+-- Restrições para tabelas `house_lists`
 --
 ALTER TABLE `house_lists`
   ADD CONSTRAINT `house_lists_ibfk_1` FOREIGN KEY (`house_id`) REFERENCES `houses` (`id`) ON DELETE CASCADE;
 
 --
--- Limitadores para a tabela `ip_bans`
+-- Restrições para tabelas `ip_bans`
 --
 ALTER TABLE `ip_bans`
   ADD CONSTRAINT `ip_bans_ibfk_1` FOREIGN KEY (`banned_by`) REFERENCES `players` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Limitadores para a tabela `market_history`
+-- Restrições para tabelas `market_history`
 --
 ALTER TABLE `market_history`
   ADD CONSTRAINT `market_history_ibfk_1` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`) ON DELETE CASCADE;
 
 --
--- Limitadores para a tabela `market_offers`
+-- Restrições para tabelas `market_offers`
 --
 ALTER TABLE `market_offers`
   ADD CONSTRAINT `market_offers_ibfk_1` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`) ON DELETE CASCADE;
 
 --
--- Limitadores para a tabela `players`
+-- Restrições para tabelas `players`
 --
 ALTER TABLE `players`
   ADD CONSTRAINT `players_ibfk_1` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE CASCADE;
 
 --
--- Limitadores para a tabela `player_deaths`
+-- Restrições para tabelas `player_deaths`
 --
 ALTER TABLE `player_deaths`
   ADD CONSTRAINT `player_deaths_ibfk_1` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`) ON DELETE CASCADE;
 
 --
--- Limitadores para a tabela `player_depotitems`
+-- Restrições para tabelas `player_depotitems`
 --
 ALTER TABLE `player_depotitems`
   ADD CONSTRAINT `player_depotitems_ibfk_1` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`) ON DELETE CASCADE;
 
 --
--- Limitadores para a tabela `player_inboxitems`
+-- Restrições para tabelas `player_inboxitems`
 --
 ALTER TABLE `player_inboxitems`
   ADD CONSTRAINT `player_inboxitems_ibfk_1` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`) ON DELETE CASCADE;
 
 --
--- Limitadores para a tabela `player_items`
+-- Restrições para tabelas `player_items`
 --
 ALTER TABLE `player_items`
   ADD CONSTRAINT `player_items_ibfk_1` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`) ON DELETE CASCADE;
 
 --
--- Limitadores para a tabela `player_namelocks`
+-- Restrições para tabelas `player_namelocks`
 --
 ALTER TABLE `player_namelocks`
   ADD CONSTRAINT `player_namelocks_ibfk_1` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `player_namelocks_ibfk_2` FOREIGN KEY (`namelocked_by`) REFERENCES `players` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Limitadores para a tabela `player_spells`
+-- Restrições para tabelas `player_spells`
 --
 ALTER TABLE `player_spells`
   ADD CONSTRAINT `player_spells_ibfk_1` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`) ON DELETE CASCADE;
 
 --
--- Limitadores para a tabela `player_storage`
+-- Restrições para tabelas `player_storage`
 --
 ALTER TABLE `player_storage`
   ADD CONSTRAINT `player_storage_ibfk_1` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`) ON DELETE CASCADE;
 
 --
--- Limitadores para a tabela `player_storeinboxitems`
+-- Restrições para tabelas `player_storeinboxitems`
 --
 ALTER TABLE `player_storeinboxitems`
   ADD CONSTRAINT `player_storeinboxitems_ibfk_1` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`) ON DELETE CASCADE;
 
 --
--- Limitadores para a tabela `tile_store`
+-- Restrições para tabelas `tile_store`
 --
 ALTER TABLE `tile_store`
   ADD CONSTRAINT `tile_store_ibfk_1` FOREIGN KEY (`house_id`) REFERENCES `houses` (`id`) ON DELETE CASCADE;
 
 --
--- Limitadores para a tabela `znote_guild_wars`
+-- Restrições para tabelas `znote_guild_wars`
 --
 ALTER TABLE `znote_guild_wars`
   ADD CONSTRAINT `znote_guild_wars_ibfk_1` FOREIGN KEY (`id`) REFERENCES `guild_wars` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
