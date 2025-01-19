@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monsters>
 	<monster name="Treiner" file="monsters/others/treiner.xml" />
+
+	<!-- Boss -->
+	<monster name="Sasuke Shippuden" file="monsters/boss/sasuke_shippuden.xml" />
 </monsters>

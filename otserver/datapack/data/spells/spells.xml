@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spells>
 	<!-- Healing Spells -->
-	<instant group="healing" spellid="1" name="" words="regeneration" level="10" mana="30" aggressive="0" selftarget="1" cooldown="1000" groupcooldown="1000" needlearn="0" script="jutsus/healing/regeneration.lua">
+	<instant group="healing" spellid="1" name="" words="regeneration" level="10" mana="30" aggressive="0" selftarget="1" cooldown="1000" groupcooldown="1000" needlearn="0" visibleOnJutsuList="true" script="jutsus/healing/regeneration.lua">
 		<vocation name="Naruto Classic" />
 		<vocation name="Sasuke Classic" />
 	</instant>
